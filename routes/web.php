@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\PaginaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontEndController::class,'Home'] );
+Route::get('/admin/Pagina/Insertar', [PaginaController::class,'insertarGet'] );
+Route::post('/admin/Pagina/Insertar', [PaginaController::class,'insertarPost'] );
 Route::get('/contacto', [FrontEndController::class,'Contacto'] );
+// http://localhost:8000/pagina/Pagina1
+Route::get('/pagina/{nombreseo}', [FrontEndController::class,'Paginas'] );
+// http://localhost:8000/cat
 Route::get('/{nombreseo}', [FrontEndController::class,'Categorias'] );
 Route::get('/{nombreseo}/{idpelicula}', [FrontEndController::class,'Peliculas'] );
