@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontEndController::class,'Home'] );
+Route::get('/api/listar', [FrontEndController::class,'ListarCategorias'] );
+
 Route::get('/admin/Pagina/Insertar', [PaginaController::class,'insertarGet'] );
 Route::post('/admin/Pagina/Insertar', [PaginaController::class,'insertarPost'] );
 Route::get('/contacto', [FrontEndController::class,'Contacto'] );

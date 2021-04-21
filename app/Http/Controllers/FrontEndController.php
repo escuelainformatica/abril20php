@@ -16,6 +16,13 @@ class FrontEndController extends Controller
 
         return view('home',['categorias'=>$categorias,'paginas'=>$paginas]);
     }
+
+    // web services, rest, api
+    public function ListarCategorias(Request $req) {
+        $categorias = Categoria::all();
+        return $categorias;
+    }
+
     public function Categorias(Request $req,$nombreseo) {
         try {
             $categorias = Categoria::all();
